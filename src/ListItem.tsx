@@ -1,4 +1,10 @@
-export default function ListItem(props) {
+export default function ListItem(props: {
+  listing_id: number,
+  url: string,
+  MainImage: string,
+  title: string,
+  currency_code: string,
+  price: string, quantity: number}) {
   const { listing_id, url, MainImage, title, currency_code, price, quantity } = props;
 
   let titleTruncated: string = title;

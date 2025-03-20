@@ -1,12 +1,10 @@
 import ListItem from './ListItem';
 
+
 export default function Listing({ items }) {
   return (
     <div className="item-list">
-      {items.map(item => {
-        if (item.state == 'removed') {
-          return null;
-        }
+      {items.filter(item => item.hasOwnProperty('MainImage')).map(item => {
         return (
           <ListItem
             listing_id={item.listing_id}
