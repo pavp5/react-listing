@@ -1,10 +1,23 @@
 import ListItem from './ListItem';
 
+type ImageType = {
+  url_570xN: string,
+}
 
-export default function Listing({ items }) {
+type ItemType = {
+  listing_id: number,
+  url: string,
+  MainImage?: ImageType,
+  title: string,
+  currency_code: string,
+  price: string,
+  quantity: number,
+}
+
+export default function Listing({ items } ) {
   return (
     <div className="item-list">
-      {items.filter(item => item.hasOwnProperty('MainImage')).map(item => {
+      {items.filter((item : ItemType) => item.hasOwnProperty('MainImage')).map((item : ItemType) => {
         return (
           <ListItem
             listing_id={item.listing_id}
